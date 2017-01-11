@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Trivia Game</title>
+<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<script type="text/javascript" src="assets/javascript/app.js"></script>  
+</head>
+<body>
+
+
+
+<div id="time"> </div>
+<br><br><br><br>
+<div>   
+    <div class="correctAnswer">Correct Answer: 0 <br></div>
+    <div class="incorrectAnswer">Incorrect Answer: 0</div>
+</div>  
+
+
+<div class="questions">
+    <p>Question #1: Which Movie did Denzel Washington recieve an Oscar for best Actor in a leading role?</p>
+    <label><input type="radio" name="q1" value="a" />Training Day</label>
+    <label><input type="radio" name="q1" value="b" />Glory</label>
+    <label><input type="radio" name="q1" value="c" />Malcom X</label>
+</div>
+
+<div class="questions hide">
+    <p>Question #2: According to BET.com which movie was voted best love story ever?</p>
+    <label><input type="radio" name="q2" value="a" />Something New</label>
+    <label><input type="radio" name="q2" value="b" />Love and Basketball</label>
+    <label><input type="radio" name="q2" value="c" />Love Jones</label>
+</div>
+
+<div class="questions hide">
+    <p>Question #3:Who was the first African American actor to win an Oscar</p>
+    <label><input type="radio" name="q3" value="a" />Hattie McDaniel</label>
+    <label><input type="radio" name="q3" value="b" />Denzel Washington</label>
+    <label><input type="radio" name="q3" value="c" />Halle Berry</label>
+</div>
+
+<div class="questions hide">
+    <p>Question #4: The leading female actor in Lady Sings the Blue was in what singing group?</p>
+    <label><input type="radio" name="q4" value="a" />Destiny Child</label>
+    <label><input type="radio" name="q4" value="b" />Supreme</label>
+    <label><input type="radio" name="q4" value="c" />TLC</label>
+</div>
+
+<div class="questions hide">
+    <p>Question #5:Which tv show was considered the best sitcoms in the 80's?</p>
+    <label><input type="radio" name="q5" value="a" />Different World</label>
+    <label><input type="radio" name="q5" value="b" />Fresh Price of Bel-Air</label>
+    <label><input type="radio" name="q5" value="c" />Bill Cosby Show</label>
+</div>
+<script type="text/javascript">
+var correctAnswer = 0;
+var incorrectAnswer = 0;
+var answers = {q1: 'a', q2: 'b', q3: 'a', q4: 'b', q5: "c"};
+
+$('input:radio').click(function() {
+    var container = $(this).parents('div');
+    var question = $(this).attr('name');
+    var answer = $(this).val();
+
+    alert(answers[question] === answer);
+    
+    container.addClass('hide');
+    container.next().removeClass('hide');
+    if (answers[question] === answer){
+        correctAnswer++;
+        console.log(correctAnswer);
+        $(".correctAnswer").html("correctAnswer: " + correctAnswer);
+        }
+    else {
+        incorrectAnswer++;
+        console.log(incorrectAnswer);
+        $(".incorrectAnswer").html("incorrectAnswer: " + incorrectAnswer);
+        }
+
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+.hide { display:none; 
+	  }
+
+.box{ height: 200px;
+	  width: 400px; 
+	  background-color: grey;
+	  right margin:auto;
+	  left margin: auto;
+	  position: center;
+
+	}
+
+body {height:1000px;
+	  width: 600px;
+	  background-repeat: no-repeat;
+	  text-align: center;
+}
+	 }
+
+div a {
+	text-align: center;
+	}
+
